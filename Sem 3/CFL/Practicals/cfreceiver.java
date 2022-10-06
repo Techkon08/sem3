@@ -3,21 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package cf1;
-import java.io.*;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.*;
+import java.util.Random;
+
 /**
  *
- * @author Merin
+ * @author admin
  */
 public class cfreceiver {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         int i = 0, k = 0;
         String pt = "";
         String ct = "";
-        ServerSocket skt = new ServerSocket(3306);
+        ServerSocket skt = new ServerSocket(6017);
         Socket sc = skt.accept();
         Random r = new Random();
         System.out.println("Enter the string: ");
@@ -33,10 +38,10 @@ public class cfreceiver {
         }
         for(i = 0; i < s[0].length(); i++){
             System.out.print("j = "+ j[i]);
-            pt += (char)(s[0].charAt(1) - j[i]);
+            pt += (char)(s[0].charAt(i) - j[i]);
         }
         System.out.print("Msg from Sender: "+pt);
+        
+      
 }
 }
-    
-
